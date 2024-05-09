@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import React from "react";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { NotebookText } from 'lucide-react';
+import { NotebookText } from "lucide-react";
 import "./globals.css";
 import {
   ClerkProvider,
@@ -27,23 +28,22 @@ export default function RootLayout({
       <html lang="en">
         <body className="bg-gray-100 font-sans">
           <header className="bg-white shadow">
-            <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between items-center">
-                <div className="flex">
-                <NotebookText className="rounded w-10 h-10" />
-                </div>
-                <div className="flex items-center">
-                  <SignedOut>
-                    <SignInButton />
-                  </SignedOut>
-                  <SignedIn>
-                    <UserButton />
-                  </SignedIn>
-                </div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+              <div className="flex items-center">
+                <NotebookText className="rounded-full w-10 h-10 mr-2" />
+                <h1 className="text-xl font-semibold">NotesApp</h1>
+              </div>
+              <div className="flex items-center">
+                <SignedOut>
+                  <SignInButton />
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
               </div>
             </div>
           </header>
-          <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <main className="">
             {children}
           </main>
         </body>
