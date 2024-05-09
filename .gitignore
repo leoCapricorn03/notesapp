@@ -40,3 +40,7 @@ node_modules/
 .next/
 .swc/
 .*.env
+
+
+ git config --global user.email "hthyyt@gmail.com"
+  git config --global user.name "capricorn"
