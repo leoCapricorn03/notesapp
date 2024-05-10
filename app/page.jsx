@@ -1,8 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import { currentUser } from '@clerk/nextjs/server';
+import { redirect } from "next/navigation"
 
-
-const HomePage = () => {
+const HomePage = async() => {
+const user = await currentUser()
+  if (!user) {
+     redirect("/sign-in")}
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
       <div className="max-w-md w-full bg-white shadow-lg rounded-lg overflow-hidden">
@@ -12,12 +16,11 @@ const HomePage = () => {
           </h2>
           <p className="text-gray-700 text-lg text-center mb-8">
             Keep track of your tasks and write down your notes easily.
+            
           </p>
           <div className="flex justify-center">
             <Link href="/create-notes" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full mr-4">
-              
                 Create Notes
-             
             </Link>
             <Link href="/notes" className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full">
              
@@ -29,6 +32,8 @@ const HomePage = () => {
       </div>
     </div>
   );
+
+  
 };
 
 export default HomePage;
