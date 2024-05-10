@@ -3,7 +3,7 @@ import CreateNotes from '@/components/forms/Createnotes'
 
 const page = () => {
   return (
-    <div>page
+    <div>
         <div className="">
             <CreateNotes/>
         </div>
