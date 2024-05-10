@@ -10,6 +10,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,10 +30,13 @@ export default function RootLayout({
         <body className="bg-gray-100 font-sans">
           <header className="bg-white shadow">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-              <div className="flex items-center">
+             <Link href="/">
+             <div className="flex items-center">
                 <NotebookText className="rounded-full w-10 h-10 mr-2" />
                 <h1 className="text-xl font-semibold">NotesApp</h1>
               </div>
+             </Link>
+              
               <div className="flex items-center">
                 <SignedOut>
                   <SignInButton />
